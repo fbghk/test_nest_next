@@ -1,0 +1,15 @@
+.searchBar {
+  margin: 20px 0;
+}
+
+.searchBar input {
+  padding: 5px;
+  font-size: 16px;
+}
+
+.searchBar button {
+  padding: 5px 10px;
+  margin-left: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
