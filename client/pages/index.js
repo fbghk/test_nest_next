@@ -16,7 +16,7 @@ const Home = () => {
 
   return (
     <div className={styles.container}>
-      <div className={styles.logo}>Bookstore</div>
+      <div className={styles.logo}>#Books</div>
       <SearchBar query={searchQuery} setQuery={setSearchQuery} onSearch={handleSearch} />
       <div className={styles.tags}>
         {tags.map(tag => (
