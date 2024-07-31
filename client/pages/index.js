@@ -85,7 +85,7 @@ export default function Home({ tags = [], books = [], handleTagClick }) {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Bookstore</title>
+        <title>#Book</title>
         <meta name="description" content="A simple bookstore app" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -103,7 +103,7 @@ export default function Home({ tags = [], books = [], handleTagClick }) {
 
         {/* 로고 */}
         <div className={styles.logo}>
-          <h1>Bookstore</h1>
+          <h1>#Book</h1>
         </div>
 
         {/* 검색 창 */}
