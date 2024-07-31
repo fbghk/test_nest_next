@@ -74,22 +74,14 @@
 //     </div>
 //   );
 // }
+
 import Head from 'next/head';
 import Link from 'next/link';
 import styles from '@/styles/Home.module.css';
 import SearchBar from '@/components/SearchBar';
 import Tags from '@/components/Tags';
 
-const StyledLink = ({ href, children, className }) => (
-  <Link href={href} passHref>
-    <span className={className}>{children}</span>
-  </Link>
-);
-
 export default function Home({ tags = [], books = [], handleTagClick }) {
-  // books가 정의되지 않은 경우 빈 배열을 기본값으로 설정
-  books = books || [];
-
   return (
     <div className={styles.container}>
       <Head>
@@ -99,24 +91,40 @@ export default function Home({ tags = [], books = [], handleTagClick }) {
       </Head>
 
       <main className={styles.main}>
+        {/* 우측 상단의 로그인/회원가입 버튼 */}
         <div className={styles.authButtons}>
-          <StyledLink href="/signin" className={styles.signIn}>#Sign In</StyledLink>
-          <StyledLink href="/signup" className={styles.signUp}>#Sign Up</StyledLink>
+          <Link href="/signin" passHref>
+            <span className={styles.signIn}>Sign In</span>
+          </Link>
+          <Link href="/signup" passHref>
+            <span className={styles.signUp}>Sign Up</span>
+          </Link>
         </div>
-        <h1 className={styles.title}>Welcome to Bookstore</h1>
-        <p className={styles.description}>Find your favorite books</p>
+
+        {/* 로고 */}
+        <div className={styles.logo}>
+          <h1>Bookstore</h1>
+        </div>
+
+        {/* 검색 창 */}
         <div className={styles.searchBar}>
           <SearchBar />
         </div>
-        <Tags tags={tags} onTagClick={handleTagClick} />
-        <div className={styles.bookList}>
+
+        {/* 해시태그 */}
+        <div className={styles.tags}>
+          <Tags tags={tags} onTagClick={handleTagClick} />
+        </div>
+
+        {/* 책 리스트는 여기에 추가되지만, 현재 구현하지 않음 */}
+        {/* <div className={styles.bookList}>
           {books.map((book) => (
             <div key={book.id} className={styles.bookItem}>
               <h3>{book.title}</h3>
               <p>{book.author}</p>
             </div>
           ))}
-        </div>
+        </div> */}
       </main>
     </div>
   );

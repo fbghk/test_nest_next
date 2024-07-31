@@ -2,27 +2,44 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-family: Arial, sans-serif;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 0 2rem;
+}
+
+.authButtons {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.signIn,
+.signUp {
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
 }
 
 .logo {
-  margin-top: 75px;
-  font-size: 36px;
-  font-weight: bold;
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.searchBar {
+  margin-bottom: 20px;
 }
 
 .tags {
-  display: flex;
-  width: 737px;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: center;
+  margin-top: 20px;
 }
 
-.tag {
-  background-color: #f0f0f0;
-  border: 1px solid #ccc;
-  padding: 5px 10px;
-  border-radius: 5px;
-  cursor: pointer;
+.bookList {
+  margin-top: 40px;
 }
