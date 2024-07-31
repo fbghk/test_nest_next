@@ -29,22 +29,66 @@
 //   );
 // };
 
-import React, { useState } from 'react';
+
+// import Head from 'next/head';
+// import Link from 'next/link';
+// import styles from '@/styles/Home.module.css';
+// import SearchBar from '@/components/SearchBar';
+// import Tags from '@/components/Tags';
+
+// const StyledLink = ({ href, children, className }) => (
+//   <Link href={href} passHref>
+//     <span className={className}>{children}</span>
+//   </Link>
+// );
+
+// export default function Home({ tags, books, handleTagClick }) {
+//   return (
+//     <div className={styles.container}>
+//       <Head>
+//         <title>Bookstore</title>
+//         <meta name="description" content="A simple bookstore app" />
+//         <link rel="icon" href="/favicon.ico" />
+//       </Head>
+
+//       <main className={styles.main}>
+//         <div className={styles.authButtons}>
+//           <StyledLink href="/signin" className={styles.signIn}>#Sign In</StyledLink>
+//           <StyledLink href="/signup" className={styles.signUp}>#Sign Up</StyledLink>
+//         </div>
+//         <h1 className={styles.title}>Welcome to Bookstore</h1>
+//         <p className={styles.description}>Find your favorite books</p>
+//         <div className={styles.searchBar}>
+//           <SearchBar />
+//         </div>
+//         <Tags tags={tags} onTagClick={handleTagClick} />
+//         <div className={styles.bookList}>
+//           {books.map(book => (
+//             <div key={book.id} className={styles.bookItem}>
+//               <h3>{book.title}</h3>
+//               <p>{book.author}</p>
+//             </div>
+//           ))}
+//         </div>
+//       </main>
+//     </div>
+//   );
+// }
 import Head from 'next/head';
 import Link from 'next/link';
 import styles from '@/styles/Home.module.css';
 import SearchBar from '@/components/SearchBar';
 import Tags from '@/components/Tags';
 
-export default function Home() {
-  const [books, setBooks] = useState([]);
-  const tags = ['fiction', 'non-fiction', 'history', 'science', 'technology', 'fantasy', 'romance', 'thriller', 'mystery', 'biography', 'self-help', 'education', 'children'];
+const StyledLink = ({ href, children, className }) => (
+  <Link href={href} passHref>
+    <span className={className}>{children}</span>
+  </Link>
+);
 
-  const handleTagClick = async (tag) => {
-    const response = await fetch(`http://localhost:3001/books/tag/${tag}`);
-    const data = await response.json();
-    setBooks(data);
-  };
+export default function Home({ tags = [], books = [], handleTagClick }) {
+  // books가 정의되지 않은 경우 빈 배열을 기본값으로 설정
+  books = books || [];
 
   return (
     <div className={styles.container}>
@@ -56,12 +100,8 @@ export default function Home() {
 
       <main className={styles.main}>
         <div className={styles.authButtons}>
-          <Link href="/signin">
-            <a className={styles.signIn}>#Sign In</a>
-          </Link>
-          <Link href="/signup">
-            <a className={styles.signUp}>#Sign Up</a>
-          </Link>
+          <StyledLink href="/signin" className={styles.signIn}>#Sign In</StyledLink>
+          <StyledLink href="/signup" className={styles.signUp}>#Sign Up</StyledLink>
         </div>
         <h1 className={styles.title}>Welcome to Bookstore</h1>
         <p className={styles.description}>Find your favorite books</p>
@@ -70,7 +110,7 @@ export default function Home() {
         </div>
         <Tags tags={tags} onTagClick={handleTagClick} />
         <div className={styles.bookList}>
-          {books.map(book => (
+          {books.map((book) => (
             <div key={book.id} className={styles.bookItem}>
               <h3>{book.title}</h3>
               <p>{book.author}</p>
