@@ -3,12 +3,11 @@
   padding: 0 0.5rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 }
 
 .main {
-  padding: 5rem 0;
+  padding: 0;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -25,46 +24,53 @@
 
 .description {
   text-align: center;
-  margin: 4rem 0;
+  font-size: 1.5rem;
+  margin: 1rem 0;
 }
 
 .searchBar {
-  display: flex;
-  justify-content: center;
   margin-top: 2rem;
+  width: 100%;
+  max-width: 600px;
 }
 
-.searchBar input {
-  padding: 0.5rem;
-  font-size: 1.2rem;
-}
-
-.searchBar button {
-  padding: 0.5rem 1rem;
-  font-size: 1.2rem;
-  margin-left: 0.5rem;
-  cursor: pointer;
-}
-
-.tags {
+.authButtons {
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-top: 2rem;
+  justify-content: flex-end;
+  width: 100%;
+  max-width: 1200px;
+  margin-bottom: 1rem;
 }
 
-.tags button {
-  padding: 0.5rem 1rem;
+.signIn, .signUp {
+  text-decoration: none;
   font-size: 1rem;
-  margin: 0.5rem;
-  cursor: pointer;
-  background-color: #0070f3;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
+  padding: 0.5rem 1rem;
+  margin: 0 0.5rem;
+  border: 1px solid black;
+
+  color: black;
+  display: inline-block;
 }
 
-.tags button:hover {
-  background-color: #005bb5;
+.signIn {
+  background-color: black;
+  color: white;
+}
+
+.signUp {
+  background-color: white;
+}
+
+.bookList {
+  margin-top: 2rem;
+}
+
+.bookItem {
+  border: 1px solid #ddd;
+  padding: 1rem;
+  margin: 0.5rem;
+  border-radius: 5px;
+  width: 100%;
+  max-width: 500px;
 }
