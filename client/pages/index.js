@@ -81,7 +81,7 @@ import styles from '@/styles/Home.module.css';
 import SearchBar from '@/components/SearchBar';
 import Tags from '@/components/Tags';
 
-export default function Home({ tags = [], books = [], handleTagClick }) {
+export default function Home({ tags = ['#전기', '#영어', '#예술', '#기독교', '#향수', '#청소', '#소설', '#인공지능', '#육아', '#자연', '#요리', '#학습', '#야구', '#감성', '#여행', '#미스터리', '#추억', '#긴장감'], books = [], handleTagClick }) {
   return (
     <div className={styles.container}>
       <Head>
@@ -94,10 +94,10 @@ export default function Home({ tags = [], books = [], handleTagClick }) {
         {/* 우측 상단의 로그인/회원가입 버튼 */}
         <div className={styles.authButtons}>
           <Link href="/signin" passHref>
-            <span className={styles.signIn}>Sign In</span>
+            <span className={styles.signIn}>#Sign In</span>
           </Link>
           <Link href="/signup" passHref>
-            <span className={styles.signUp}>Sign Up</span>
+            <span className={styles.signUp}>#Sign Up</span>
           </Link>
         </div>
 
@@ -113,6 +113,7 @@ export default function Home({ tags = [], books = [], handleTagClick }) {
 
         {/* 해시태그 */}
         <div className={styles.tags}>
+          
           <Tags tags={tags} onTagClick={handleTagClick} />
         </div>
 
