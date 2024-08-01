@@ -19,12 +19,14 @@
   margin: 0;
   line-height: 1.15;
   font-size: 4rem;
+  letter-spacing: .1rem;
   text-align: center;
 }
 
 .description {
   text-align: center;
   font-size: 1.5rem;
+  letter-spacing: .1rem;
   margin: 1rem 0;
 }
 
@@ -43,12 +45,13 @@
 .logo{
   font-family: 'Khmer';
   margin: 0;
-
+  letter-spacing: .1rem;
 }
 
 .signIn, .signUp {
   text-decoration: none;
   font-size: 1rem;
+  letter-spacing: .1rem;
   padding: 0.5rem 1rem;
   margin: 0 0.3rem;
   border: 1px solid black;
