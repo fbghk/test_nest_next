@@ -1,5 +1,7 @@
 .searchBar {
   margin: 20px 0;
+  
+  align-items: center;
 }
 
 .searchBar input {
