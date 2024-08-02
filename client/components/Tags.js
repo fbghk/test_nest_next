@@ -19,12 +19,19 @@ import axios from 'axios';
 
 import React from 'react';
 import styles from '@/styles/Tags.module.css';
+import { useRouter } from 'next/router';
 
-const Tags = ({ tags, onTagClick }) => {
+const Tags = ({ tags }) => {
+  const router = useRouter();
+
+  const handleTagClick = (tag) => {
+    router.push(`/books/${encodeURIComponent(tag)}`);
+  };
+
   return (
     <div className={styles.tags}>
-      {tags.map(tag => (
-        <button key={tag} onClick={() => onTagClick(tag)}>
+      {tags.map((tag) => (
+        <button key={tag} onClick={() => handleTagClick(tag)}>
           {tag}
         </button>
       ))}
